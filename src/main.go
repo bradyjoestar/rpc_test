@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/ethereum/go-ethereum/log"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"os"
@@ -20,7 +19,7 @@ func main() {
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
-	log.Info("stop signal received.")
+	fmt.Println("stop signal received.")
 }
 
 func StartHttpServer() {
