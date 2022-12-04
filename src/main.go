@@ -28,6 +28,9 @@ func StartHttpServer() {
 	r.GET("/genesis.json", func(c *gin.Context) {
 		c.String(http.StatusOK, genesis)
 	})
+	r.GET("/addresses.json", func(c *gin.Context) {
+		c.String(http.StatusOK, address)
+	})
 
 	r.Run(":8080") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
